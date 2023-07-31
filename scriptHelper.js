@@ -12,7 +12,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                      <li>Number of Moons: ${moons}</li>
                  </ol>
                  <img src="${imageUrl}">
-                 `
+                 `;
 }
 
 function validateInput(testInput) {
@@ -48,9 +48,9 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
         pilotStatus.innerHTML = `Pilot ${pilot.value} is ready for launch`;
         coPilotStatus.innerHTML = `Co-pilot ${copilot.value} is ready for launch`;
         fuelStatus.innerHTML = `Fuel level too low for launch`;
-
     } 
-    if (validCargoMass && parseInt(cargoMass.value) > 10000) {
+
+    if (validCargoMass && (cargoMass.value) > 10000) {
         list.style.visibility = "visible";
         launchStatus.innerHTML = `Shuttle Not Ready for Launch`;
         launchStatus.style.color = "#C7254E";
@@ -58,8 +58,8 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
         pilotStatus.innerHTML = `Pilot ${pilot.value} is ready for launch`;
         coPilotStatus.innerHTML = `Co-pilot ${copilot.value} is ready for launch`;
         cargoStatus.innerHTML = `Cargo mass too heavy for launch`;
-
     }
+
     if (validCargoMass && (cargoMass.value) <= 10000 && validFuelLevel && (fuelLevel.value) >= 10000 && validPilotName && validCoPilotName) {
         list.style.visibility = "visible";
         launchStatus.innerHTML = `Shuttle is Ready for Launch`;
